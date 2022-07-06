@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-image: url(../task2/bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .main{
+        width: 30%;
+        margin:  auto;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px;
+
+    }
+    h1{
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    button{
+        border-radius: 3px;
+        background-color: green;
+        color: white;
+        border: 2px solid green;
+        font-size: large;
+        text-align: center;
+       
+    }
+
+    button:hover{
+        background-color: rgb(3, 71, 3);
+        box-shadow: 1px 1px 2px 2px green;
+        color: black;
+    }
+
+    input {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-color: lightgray;
+    }
+</style>
+</head>
+<body>
+    <div class="main">
+    <h1>CALCULATE AVERAGE</h1>
+   <form class="input" >
+    <label for="eng">01.English</label>
+    <input type="number" min="1" id="eng"> <br><br>
+
+    <label for="urdu">02.urdu</label>
+    <input type="number" min="1" id="urdu"> <br><br>
+
+    <label for="math">03.math</label>
+    <input type="number" min="1" id="math"> <br><br>
+
+    <label for="Islamiat">04.Islamiat</label>
+    <input type="number" min="1" id="Islamiat"> <br><br>
+
+    <label for="Accounting">05.Accounting</label>
+    <input type="number" min="1" id="Accounting"> <br><br>
+
+    <label for="Econonmics">06.Econonmics</label>
+    <input type="number" min="1" id="Economics"> <br><br>
+
+    <label for="POC">07.POC</label>
+    <input type="number" min="1" id="POC"> <br><br>
+
+    <label for="Geography">08.Geography</label>
+    <input type="number" min="1" id="Geography"> <br><br>
+
+    <label for="Businesslaw">09.Business Law</label>
+    <input type="number" min="1" id="Businesslaw"> <br><br>
+
+    <label for="audit">10.Audit</label>
+    <input type="number" min="1" id="audit"> <br><br>
+
+    <button >submit</button>
+
+    
+
+   </form> 
+
+   <h1 class="average"></h1>
+
+   </div>
+
+   <script>
+    document.querySelector(".input").addEventListener("submit" ,cal);
+    function cal(event){
+        event.preventDefault();
+     let English =Number( document.querySelector("#eng").value);
+     let urdu= Number(document.querySelector("#urdu").value);
+     let math =Number( document.querySelector("#math").value);
+     let isl =Number( document.querySelector("#Islamiat").value);
+     let  eco=Number (document.querySelector("#Economics").value);
+     let Accounting =Number( document.querySelector("#Accounting").value);
+     let POC =Number( document.querySelector("#POC").value);
+     let Audit=Number( document.querySelector("#audit").value);
+     let Businesslaw = Number( document.querySelector("#Businesslaw").value);
+     let Geography =Number (document.querySelector("#Geography").value);
+
+   
+      let average =(English + urdu +math +isl +eco +Accounting +POC +Audit+ Businesslaw +Geography)/10;
+       
+     
+
+     let result = document.querySelector(".average").innerHTML=`average marks = ${average}`;
+    }
+
+    let eng = 20;
+    urdu = 30 ;
+    console.log(eng + urdu/2);
+   </script>
+</body>
+</html>
